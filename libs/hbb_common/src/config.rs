@@ -774,6 +774,7 @@ impl Config {
     }
 
     pub fn get_host_key_confirmed(host: &str) -> bool {
+        log::info!("CONFIG.read().unwrap().keys_confirmed.get(host) {}", CONFIG.read().unwrap().keys_confirmed.get(host));
         matches!(CONFIG.read().unwrap().keys_confirmed.get(host), Some(true))
     }
 
